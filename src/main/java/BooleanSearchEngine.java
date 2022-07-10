@@ -42,11 +42,6 @@ public class BooleanSearchEngine implements SearchEngine {
 
     @Override
     public List<PageEntry> search(String word) {
-        for (Map.Entry<String, List<PageEntry>> request : storage.entrySet()) {
-            if (word.equals(request.getKey())) {
-                return request.getValue();
-            }
-        }
-        return Collections.emptyList();
+        return storage.get(word);
     }
 }
